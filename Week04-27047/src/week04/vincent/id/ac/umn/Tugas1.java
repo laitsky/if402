@@ -90,8 +90,10 @@ public class Tugas1 {
                         System.out.print("Masukkan Jumlah : ");
                         inputStock = scanner.nextInt();
                     }
+
                     for (Barang barang : barangs) {
                         if (barang.getId() == id) {
+                            barang.minusStock(inputStock);
                             totalHarga = inputStock * barang.getHarga();
                             System.out.println(inputStock + " @ " + barang.getNama() + " dengan total harga " + totalHarga);
                             seedOrders(orderIndex + 1, barang, inputStock);
