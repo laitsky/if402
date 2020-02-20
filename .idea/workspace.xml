@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ece9c05-382c-448b-afb9-ee017f4946df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture/src/lecture/vincent/id/ac/umn/armstrong.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture/src/lecture/vincent/id/ac/umn/palindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,21 +41,35 @@
       <workItem from="1580970625450" duration="37000" />
       <workItem from="1581047700950" duration="160000" />
       <workItem from="1581056915483" duration="13000" />
+      <workItem from="1581563845008" duration="82000" />
+      <workItem from="1581577123297" duration="39000" />
     </task>
+    <task id="LOCAL-00001" summary="week 2, 3, and lecture">
+      <created>1581563899921</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581563899921</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="week 2, 3, and lecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="week 2, 3, and lecture" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="289" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580970554141">
       <screen x="51" y="27" width="1315" height="741" />
     </state>
     <state x="549" y="289" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/51.27.1315.741@51.27.1315.741" timestamp="1580970554141" />
-    <state x="273" y="27" width="860" height="741" key="CommitChangelistDialog2" timestamp="1581563877823">
+    <state x="273" y="27" width="860" height="741" key="CommitChangelistDialog2" timestamp="1581563899721">
       <screen x="51" y="27" width="1315" height="741" />
     </state>
-    <state x="273" y="27" width="860" height="741" key="CommitChangelistDialog2/51.27.1315.741@51.27.1315.741" timestamp="1581563877823" />
+    <state x="273" y="27" width="860" height="741" key="CommitChangelistDialog2/51.27.1315.741@51.27.1315.741" timestamp="1581563899721" />
     <state x="524" y="192" width="374" height="418" key="FileChooserDialogImpl" timestamp="1581056926686">
       <screen x="51" y="27" width="1315" height="741" />
     </state>
@@ -69,15 +79,19 @@
       <screen x="51" y="27" width="1315" height="741" />
     </state>
     <state x="162" y="31" width="1022" height="737" key="SettingsEditor/51.27.1315.741@51.27.1315.741" timestamp="1580970655044" />
-    <state x="416" y="251" key="com.intellij.ide.util.TipDialog" timestamp="1581047700684">
+    <state x="303" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1581563908208">
       <screen x="51" y="27" width="1315" height="741" />
     </state>
-    <state x="416" y="251" key="com.intellij.ide.util.TipDialog/51.27.1315.741@51.27.1315.741" timestamp="1581047700684" />
+    <state x="303" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2/51.27.1315.741@51.27.1315.741" timestamp="1581563908208" />
+    <state x="416" y="251" key="com.intellij.ide.util.TipDialog" timestamp="1581577126090">
+      <screen x="51" y="27" width="1315" height="741" />
+    </state>
+    <state x="416" y="251" key="com.intellij.ide.util.TipDialog/51.27.1315.741@51.27.1315.741" timestamp="1581577126090" />
     <state x="481" y="291" key="com.intellij.ide.util.TipDialog/51.27.1549.873/126.900.1366.768@51.27.1549.873" timestamp="1580488806923" />
-    <state x="121" y="59" width="1372" height="796" key="new project wizard" timestamp="1581047858024">
+    <state x="51" y="27" width="1305" height="741" key="new project wizard" timestamp="1581577160332">
       <screen x="51" y="27" width="1315" height="741" />
     </state>
-    <state x="121" y="59" key="new project wizard/51.27.1315.741@51.27.1315.741" timestamp="1581047858024" />
+    <state x="51" y="27" width="1305" height="741" key="new project wizard/51.27.1315.741@51.27.1315.741" timestamp="1581577160332" />
     <state x="134" y="65" width="1372" height="796" key="new project wizard/51.27.1549.873/126.900.1366.768@51.27.1549.873" timestamp="1580488857612" />
   </component>
 </project>
