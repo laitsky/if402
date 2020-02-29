@@ -1,0 +1,20 @@
+1. Multidimensional array adalah array yang memiliki dimensi lebih dari 1.
+Contoh: int[][] a = new int[3][4];
+
+2. charAt(i): mengembalikan nilai berupa char value pada index i
+length(): menghitung panjang string
+substring(m): mengembalikan substring pada index m
+substring(m,n): mengembalikan substring yang dimulai pada index m dan diakhiri pada index n
+contains(str): mengembalikan nilai boolean untuk apakah suatu string mengandung str
+equals(): mengecek kesamaan string satu dengan string lainnya, mengembalikan nilai boolean
+isEmpty(): mengecek apakah sebuah string kosong, mengembalikan nilai boolean
+concat(str): menambahkan string dengan str
+replace(old, new): menggantikan string old dengan new
+split(s): mengembalikan string yang telah displit dengan s
+intern(): mengembalikan string yang interned
+toLowerCase(): membuat string menjadi huruf kecil
+toUpperCase(): membuat string menjadi huruf besar
+trim(): menghapuskan spasi pada akhir dan ujung string
+
+3. dapat membuat kode yang sederhana dan reliabel (dapat diandalkan)
+tidak dapat rusak oleh gangguan thread atau diamati dalam keadaan yang konsisten
