@@ -9,6 +9,6 @@ public class Tetap extends Karyawan {
 
     @Override
     public int getGaji() {
-        return super.getGaji();
+        return 3000000;
     }
 }

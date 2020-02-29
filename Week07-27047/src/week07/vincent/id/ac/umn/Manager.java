@@ -8,6 +8,6 @@ public class Manager extends Karyawan {
 
     @Override
     public int getGaji() {
-        return super.getGaji();
+        return 10000000;
     }
 }

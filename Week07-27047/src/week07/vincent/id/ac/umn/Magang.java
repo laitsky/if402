@@ -9,6 +9,6 @@ public class Magang extends Karyawan {
 
     @Override
     public int getGaji() {
-        return super.getGaji();
+        return 1500000;
     }
 }
