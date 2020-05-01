@@ -2,7 +2,7 @@ package tugas1.week09.vincent.id.ac.umn;
 
 public class Item {
     private String name, type;
-    private int price;
+    private int price, oriPrice;
 
     public Item() {
     }
@@ -11,6 +11,7 @@ public class Item {
         this.name = name;
         this.type = type;
         this.price = price;
+        this.oriPrice = price;
     }
 
     public String getName() {
@@ -25,6 +26,10 @@ public class Item {
         return price;
     }
 
+    public int getOriPrice() {
+        return oriPrice;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -35,5 +40,9 @@ public class Item {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void payItem(int payment) {
+        this.price -= payment;
     }
 }

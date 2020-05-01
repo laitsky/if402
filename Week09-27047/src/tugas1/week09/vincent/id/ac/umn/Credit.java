@@ -6,15 +6,16 @@ public class Credit extends Payment {
     public Credit() {
     }
 
-    public Credit(Item item, int installment) {
+    public Credit(Item item, int maxInstallmentAmount) {
         super(item);
-        this.installment = installment;
+        this.maxInstallmentAmount = maxInstallmentAmount;
+        this.installment = maxInstallmentAmount - 1;
     }
 
     @Override
     public int pay() {
         if (!isPaidOff) {
-            isPaidOff = true;
+            return 0;
         }
         return this.item.getPrice() / maxInstallmentAmount;
     }
@@ -22,11 +23,18 @@ public class Credit extends Payment {
     @Override
     public int getRemainingAmount() {
         if (isPaidOff) return 0;
-        return item.getPrice();
+        return item.getPrice() * installment / maxInstallmentAmount;
     }
 
     @Override
     public String getClassName() {
         return "CREDIT";
+    }
+
+    public void payItem() {
+        installment--;
+        if (installment == 0) {
+            isPaidOff = true;
+        }
     }
 }

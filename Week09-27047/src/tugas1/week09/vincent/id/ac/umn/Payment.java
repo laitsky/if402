@@ -42,4 +42,7 @@ public abstract class Payment implements ClassInfo {
         return isPaidOff;
     }
 
+    public void payItem() {
+
+    }
 }

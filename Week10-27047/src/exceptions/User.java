@@ -2,13 +2,17 @@ package exceptions;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import javax.xml.bind.DatatypeConverter;
+import exceptions.ExcessiveFailedLoginException;
+import exceptions.InvalidPropertyException;
+
 
 public class User {
     private String firstName;
     private String lastName;
     private Character gender;
     private String address;
-    private String username;
+    private String userName;
     private String password;
     private MessageDigest digest;
 
@@ -19,36 +23,37 @@ public class User {
         try {
             digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(strToHash.getBytes(StandardCharsets.UTF_8));
-        } catch (Exception ex) {
+            return DatatypeConverter.printHexBinary(hash);
+        }catch(Exception ex) {
             ex.printStackTrace();
         }
         return "";
     }
 
-    public User(String firstName, String lastName, Character gender, String address,
-                String username, String password) {
+    public User(String firstName, String lastName, Character gender, String address, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.address = address;
-        this.username = username;
-        this.password = password;
+        this.userName = userName;
+        this.password = hash(password);
     }
 
-    public boolean login(String username, String password) throws ExcessiveFailedLoginException {
-        if (this.username.equals(username)) {
-            if (loginAttempts == maxLoginAttempts) {
+    public boolean login(String userName, String password) throws ExcessiveFailedLoginException {
+        if(this.userName.equals(userName)) {
+            if(loginAttempts == maxLoginAttempts) {
                 loginAttempts++;
                 throw new ExcessiveFailedLoginException();
-            } else if (loginAttempts > maxLoginAttempts) {
+            }else if(loginAttempts > maxLoginAttempts) {
                 throw new ExcessiveFailedLoginException("Anda telah mencapai batas login");
             }
 
-            if (this.password.equals(hash(password))) {
+            if(this.password.equals(hash(password))) {
                 loginAttempts = 0;
                 return true;
-            } else {
+            }else {
                 loginAttempts++;
+                System.out.println("Password yang anda masukkan salah!");
             }
         }
         return false;
@@ -57,16 +62,16 @@ public class User {
     public String greeting() {
         String greet = "Selamat Datang!";
         switch (gender) {
-            case 'M' : greet += "Tuan "; break;
-            case 'F' : greet += "Nona "; break;
+            case 'L' : greet +="Tuan ";break;
+            case 'P' : greet +="Nona ";break;
         }
         greet += this.firstName + " " + this.lastName;
 
         return greet;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
 }

@@ -21,17 +21,6 @@ public class Main {
         System.out.println("Harga\t: " + item.getPrice());
     }
 
-    public static void printPesanan() {
-        int i = 1;
-        for (Payment payment : listOfPayments) {
-            System.out.println("No\t\t: " + i);
-            System.out.println("Nama\t: " + payment.getItem().getName());
-            System.out.println("Tipe\t: " + payment.getItem().getType());
-            System.out.println("Status\t: " + payment.getStatus());
-            i++;
-        }
-    }
-
     public static void main(String[] args) {
         int opt = 0, id = 0, tipePembayaran = 0, jumlahBayar = 0;
         String kodeBayar;
@@ -72,12 +61,12 @@ public class Main {
                             System.out.println("Harga Pembayaran: " + listOfItems.get(id).getPrice());
                             System.out.print("Bayar: ");
                             jumlahBayar = s.nextInt();
-                            if (jumlahBayar == listOfItems.get(id).getPrice()) {
-                                System.out.println("Transaksi telah dibayar lunas");
+                            if (jumlahBayar >= listOfItems.get(id).getPrice()) {
+                                System.out.println("Transaksi telah dibayar lunas!");
                                 listOfPayments.add(new Cash(listOfItems.get(id)));
                             }
-
                         } else if (kodeBayar.equals("N") || kodeBayar.equals("n")) {
+                            listOfPayments.add(new Cash(listOfItems.get(id)));
                             System.out.println("Transaksi telah disimpan");
                         }
                         break;
@@ -93,10 +82,13 @@ public class Main {
                                 break;
                             }
                         } while (correctInput);
+                        listOfPayments.add(new Credit(listOfItems.get(id), lamaCicilan));
                         System.out.println("Harga Pembayaran: " + listOfItems.get(id).getPrice());
                         System.out.print("Bayar: ");
                         bayaran = s.nextInt();
-                        System.out.println("Transaksi telah dibayar");
+                        if (bayaran >= listOfPayments.get(listOfPayments.size() - 1).pay()) {
+                            System.out.println("Transaksi telah dibayar");
+                        }
                         break;
                     default:
                         return;
@@ -104,7 +96,37 @@ public class Main {
             }
             /* BATAS AKHIR MENU NOMOR 1 */
             else if (opt == 2) {
-                printPesanan();
+                for (int i = 0; i < listOfPayments.size(); i++) {
+                    System.out.println("No\t\t\t: " + i + 1);
+                    System.out.println("Nama\t\t: " + listOfPayments.get(i).getItemName());
+                    System.out.println("Tipe\t\t: " + listOfPayments.get(i).getItem().getType());
+                    System.out.println("Status\t\t: " + listOfPayments.get(i).getStatus());
+                    System.out.println("Sisa Pembayaran: " + listOfPayments.get(i).getRemainingAmount());
+                    System.out.println("---------------");
+                }
+                System.out.print("Pilih no. transaksi: ");
+                int hutang = s.nextInt();
+                hutang--;
+                s.nextLine();
+                System.out.println("No\t\t\t: " + (hutang + 1));
+                System.out.println("Nama\t\t: " + listOfPayments.get(hutang).getItemName());
+                System.out.println("Tipe\t\t: " + listOfPayments.get(hutang).getItem().getType());
+                System.out.println("Status\t\t: " + listOfPayments.get(hutang).getStatus());
+                System.out.println("Sisa Pembayaran: " + listOfPayments.get(hutang).getRemainingAmount());
+                System.out.println("Harga Pembayaran: " + listOfPayments.get(hutang).pay());
+
+                if (listOfPayments.get(hutang).getRemainingAmount() > 0) {
+                    System.out.print("Bayar: ");
+                    int bayar = s.nextInt();
+                    if (bayar >= listOfPayments.get(hutang).pay() && listOfPayments.get(hutang).getRemainingAmount()
+                            == listOfPayments.get(hutang).pay()) {
+                        System.out.println("Transaksi anda telah dibayar lunas. Terima kasih!");
+                        listOfPayments.get(hutang).payItem();
+                    } else {
+                        System.out.println("Transaksi anda telah dibayar");
+                        listOfPayments.get(hutang).payItem();
+                    }
+                }
             }
             /* BATAS AKHIR MENU NOMOR 2 */
             else {
