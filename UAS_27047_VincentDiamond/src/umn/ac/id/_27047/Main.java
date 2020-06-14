@@ -220,7 +220,8 @@ public class Main {
                             System.out.println("Uang tidak mencukupi");
                         } else {
                             totalPayment = balihos.get(reqIdx).getHarga() * jmlHariSewa;
-                            orders.add(new Order(balihos.get(reqIdx), bidang, tglMulai, "Baliho", jmlHariSewa, totalPayment));
+                            orders.add(new Order(balihos.get(reqIdx), bidang, tglMulai, "Baliho", jmlHariSewa, totalPaymernet
+                            ));
                             System.out.println("Pemesanan anda sukses");
                         }
                     } else if (reqIdx <= majalahIdx) {
